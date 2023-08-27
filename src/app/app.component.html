@@ -1,0 +1,28 @@
+<div class="max-w-7xl border h-full mx-auto m-10">
+  <nav class="bg-orange-600 w-full h-[100px] p-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a
+        routerLink="/menu"
+        class="text-white text-3xl font-bold first-letter:text-7xl"
+        >FoodFusion</a
+      >
+      <ul class="flex space-x-6">
+        <li>
+          <a routerLink="/menu" class="text-white hover:text-gray-300">Menu</a>
+        </li>
+        <li *ngIf="!isAuthenticated">
+          <a routerLink="/register" class="text-white hover:text-gray-300"
+            >Register</a
+          >
+        </li>
+        <li *ngIf="!isAuthenticated">
+          <a routerLink="/" class="text-white hover:text-gray-300">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="p-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

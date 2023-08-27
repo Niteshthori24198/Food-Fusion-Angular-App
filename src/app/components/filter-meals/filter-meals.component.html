@@ -1,0 +1,16 @@
+<p class="text-gray-500 py-2">CATEGORY : <b>{{param}}</b></p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg " *ngFor="let category of categoryMeals">
+    <img
+      class="w-full object-contain"
+      [src]="category.strMealThumb"
+      alt="{{ category.strMeal }}"
+    />
+     <div class="px-6 py-4 flex justify-between items-center">
+      <div class="font-bold text-xl mb-2 line-clamp-1">{{ category.strMeal }}</div>
+      <a [routerLink]="['/about', category.idMeal]"
+       class="text-gray-500 hover:text-gray-700 font-bold py-2 px-4 underline "
+      >More</a>
+    </div>
+  </div>
+</div>
